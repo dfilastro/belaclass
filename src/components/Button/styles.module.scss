@@ -1,0 +1,29 @@
+.descContainer {
+  background-color: rgb(238, 158, 171);
+  padding: 0.5rem 1rem;
+  width: 8rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+  letter-spacing: 0.15rem;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: rgb(233, 118, 137);
+  }
+
+  &.withBorderNotFilled {
+    background-color: white;
+    color: rgb(233, 118, 137);
+    border: 1px solid rgb(238, 158, 171);
+    transition: all 0.3s;
+
+    &:hover {
+      color: white;
+      background-color: rgb(233, 118, 137);
+    }
+  }
+}

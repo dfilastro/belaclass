@@ -1,0 +1,36 @@
+.container {
+  height: 8rem;
+  display: flex;
+  background-color: var(--white);
+  color: var(--black);
+
+  .logoContainer {
+    // font-family: rochester;
+    // font-family: send flowers;
+    // font-family: meddon;
+    font-family: 'Montez', cursive;
+    // font-family: montez;
+    font-size: 6rem;
+    max-height: 8rem;
+    margin: 0 auto;
+  }
+
+  .nav {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    right: 0;
+    top: 2.5rem;
+    margin-right: 100px;
+    align-items: center;
+
+    .userImage {
+      display: flex;
+      width: 3rem;
+      height: 3rem;
+
+      border-radius: 20rem;
+    }
+  }
+}

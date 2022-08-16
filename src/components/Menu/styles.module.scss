@@ -1,0 +1,29 @@
+.menuContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  gap: 2rem;
+  font-size: 1rem;
+  background-color: var(--lilac-800);
+  color: var(--white);
+
+  p {
+    margin: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.2s;
+    letter-spacing: 0.2rem;
+
+    &:hover {
+      color: var(--lilac-200);
+
+      cursor: pointer;
+    }
+
+    &.active {
+      color: var(--white);
+      font-weight: 800;
+    }
+  }
+}

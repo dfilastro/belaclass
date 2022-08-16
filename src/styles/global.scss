@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #ffffff;
+  --black: #000000;
+
+  --lilac-200: rgba(226, 210, 240, 0.987);
+  --lilac-800: rgba(202, 167, 232, 0.987);
+  --lilac-900: rgba(168, 109, 219, 0.987);
+
+  --pink-700: rgb(238, 158, 171);
+  --pink-950: rgb(233, 118, 137);
+}
+
+// rgba(202, 167, 232, 0.987)
+// rgba(226, 210, 240, 0.987)
+// rgb(238, 158, 171)
+// rgb(233, 118, 137)
+
+body,
+input,
+textarea,
+select,
+button {
+  font: 400 1rem 'Poppins', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit; //takes the color from the father element, instead of the regular blue
+  text-decoration: none; //takes out the underline
+}

@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 82vh;
+
+  .loginContainer {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--lilac-200);
+
+    a {
+      font-size: 0.8rem;
+    }
+
+    p {
+      margin-bottom: 0.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      font-size: 1.5rem;
+    }
+
+    div {
+      text-align: center;
+
+      input {
+        width: 20rem;
+        height: 3rem;
+        padding: 0.5rem;
+        border: 1.5px solid var(--lilac-200);
+        border-radius: 3rem;
+        text-align: center;
+        color: (var(--lilac-800));
+      }
+
+      input:focus {
+        outline-color: var(--lilac-800);
+      }
+
+      input::placeholder {
+        color: var(--lilac-800);
+      }
+    }
+  }
+
+  .bannerContainer {
+    justify-content: center;
+    align-items: center;
+    margin: 4rem auto;
+  }
+}
