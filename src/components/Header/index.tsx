@@ -1,5 +1,5 @@
 // import { useUser } from '@auth0/nextjs-auth0';
-import { Button } from '../Button';
+// import { Button } from '../ButtonOne';
 import styles from './styles.module.scss';
 
 export function Header() {
@@ -10,7 +10,9 @@ export function Header() {
         <span>class</span>
       </p>
       <nav className={styles.nav}>
-        <Button description='Acessar' route='/login' withBorderNotFilled={true} />
+        {/* <a href='/login'>
+          <Button description='Acessar' route='/login' withBorderNotFilled={true} />
+        </a> */}
       </nav>
     </header>
   );

@@ -12,7 +12,7 @@ export function Menu() {
         <p>Sobre</p>
       </ActiveLink>
 
-      <ActiveLink activeClassName={styles.active} href={'/access'}>
+      <ActiveLink activeClassName={styles.active} href={'/courses'}>
         <p>Cursos</p>
       </ActiveLink>
 

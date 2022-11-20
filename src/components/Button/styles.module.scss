@@ -1,29 +1,15 @@
-.descContainer {
-  background-color: rgb(238, 158, 171);
-  padding: 0.5rem 1rem;
-  width: 8rem;
-  text-align: center;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: white;
-  letter-spacing: 0.15rem;
-
-  transition: background-color 0.3s;
+.button {
+  padding: 0.5rem 4rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: var(--lilac-800);
+  color: var(--white);
+  font-weight: 600;
+  transition: all 0.5s;
+  cursor: pointer;
 
   &:hover {
-    background-color: rgb(233, 118, 137);
+    background-color: var(--lilac-200);
   }
-
-  &.withBorderNotFilled {
-    background-color: white;
-    color: rgb(233, 118, 137);
-    border: 1px solid rgb(238, 158, 171);
-    transition: all 0.3s;
-
-    &:hover {
-      color: white;
-      background-color: rgb(233, 118, 137);
-    }
-  }
+  // text-transform: uppercase;
 }

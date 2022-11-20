@@ -2,6 +2,7 @@
 import styles from './styles.module.scss';
 import Image from 'next/image';
 import { FormEvent, useContext, useState } from 'react';
+import { Button } from '../../components/ButtonOne';
 // import { AuthContext } from '../../contexts/AuthContext';
 
 export default function Login() {
@@ -42,7 +43,10 @@ export default function Login() {
           />
         </div>
         <a>Esqueceu a senha?</a>
-        <button type='submit'>Entrar</button>
+
+        <button className={styles.button} type='submit'>
+          Entrar
+        </button>
       </form>
       <div className={styles.bannerContainer}>
         <Image src='/image2.png' className={styles.imageContainer} height='650rem' width='350rem' />
