@@ -1,44 +1,115 @@
-import styles from './styles.module.scss';
+import { useInfo } from 'hooks/useInformation';
+
+import styled from '@emotion/styled';
 
 export default function About() {
+  const { information } = useInfo();
+
+  const AboutContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+  `;
+
+  const AboutTitle = styled.h1`
+    font-weight: 600;
+    font-size: 2rem;
+  `;
+
+  const AboutDescription = styled.p`
+    margin: 2rem 0;
+    text-align: center;
+    width: 60vw;
+  `;
+
+  const ProfessionalsContainer = styled.div`
+    padding: 0 5rem;
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+  `;
+
+  const ProfessionalsCard1 = styled.div`
+    background-image: url(${information.aboutImg1});
+    background-size: contain;
+    background-position: center;
+    width: 30rem;
+    height: 30rem;
+    padding: 1rem;
+  `;
+
+  const ProfessionalsCard2 = styled.div`
+    background-image: url(${information.aboutImg2});
+    background-size: contain;
+    background-position: center;
+    width: 30rem;
+    height: 30rem;
+    padding: 1rem;
+  `;
+
+  const ProfessionalsCard3 = styled.div`
+    background-image: url(${information.aboutImg3});
+    background-size: contain;
+    background-position: center;
+    width: 30rem;
+    height: 30rem;
+    padding: 1rem;
+  `;
+
+  const ProfessionalsCardDescription = styled.div`
+    height: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  `;
+
+  const ProfessionalsDescription = styled.div`
+    height: 20%;
+    background-color: white;
+    padding: 0.2rem 1rem;
+  `;
+
+  const Img = styled.img`
+    width: 30rem;
+    height: 30rem;
+  `;
+
   return (
-    <div className={styles.container}>
-      <div className={styles.titleDescription}>
-        <h1 className={styles.title}>Somos um time de maquiadores profissionais</h1>
-        <p className={styles.description}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis perferendis in dolore
-          repudiandae qui voluptate fugiat odio vitae consequuntur, assumenda rem deserunt sunt
-          saepe consequatur! Voluptatibus molestias laborum aliquam quae.
-        </p>
-      </div>
-      <div className={styles.professionalsBio}>
-        <div className={styles.professionalsCard1}>
-          <div className={styles.professionalsCardDescription}>
-            <div className={styles.professionalsDescription}>
-              <h1>Gabriela Negro</h1>
-              <p>@gabenegro</p>
-            </div>
-          </div>
-        </div>
+    <div>
+      <AboutContainer>
+        <AboutTitle>{information.aboutTitle}</AboutTitle>
+        <AboutDescription>{information.aboutDesc}</AboutDescription>
+      </AboutContainer>
+      <ProfessionalsContainer>
+        <ProfessionalsCard1>
+          <ProfessionalsCardDescription>
+            <ProfessionalsDescription>
+              <h1>{information.aboutProf1}</h1>
+              <p>{information.aboutMed1}</p>
+            </ProfessionalsDescription>
+          </ProfessionalsCardDescription>
+        </ProfessionalsCard1>
 
-        <div className={styles.professionalsCard2}>
-          <div className={styles.professionalsCardDescription}>
-            <div className={styles.professionalsDescription}>
-              <h1>Jane Doe</h1>
-              <p>@janedoe</p>
-            </div>
-          </div>
-        </div>
+        <ProfessionalsCard2>
+          <ProfessionalsCardDescription>
+            <ProfessionalsDescription>
+              <h1>{information.aboutProf2}</h1>
+              <p>{information.aboutMed2}</p>
+            </ProfessionalsDescription>
+          </ProfessionalsCardDescription>
+        </ProfessionalsCard2>
 
-        <div className={styles.professionalsCard3}>
-          <div className={styles.professionalsCardDescription}>
-            <div className={styles.professionalsDescription}>
-              <h1>John Doe</h1>
-              <p>@johndoe</p>
-            </div>
-          </div>
-        </div>
-      </div>
+        <ProfessionalsCard3>
+          <ProfessionalsCardDescription>
+            <ProfessionalsDescription>
+              <h1>{information.aboutProf3}</h1>
+              <p>{information.aboutMed3}</p>
+            </ProfessionalsDescription>
+          </ProfessionalsCardDescription>
+        </ProfessionalsCard3>
+      </ProfessionalsContainer>
     </div>
   );
 }
