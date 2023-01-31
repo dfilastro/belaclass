@@ -1,25 +1,33 @@
-import styles from './styles.module.scss';
-// import { useSession, signIn } from 'next-auth/react';
+import styled from '@emotion/styled';
+import { useInfo } from '../../../hooks/useInformation';
 
-interface ButtonProps {
+interface Props {
   description: string;
-  route: string;
-  withBorderNotFilled: boolean;
+  route?: string;
+  type: string;
 }
 
-export function Button({ description, route, withBorderNotFilled }: ButtonProps) {
-  //   const { data: session } = useSession();
+export function Button({ description, route, type }: Props) {
+  const { information } = useInfo();
 
-  //   return !session ? (
+  const ButtonContainer = styled.a`
+    padding: 0.5rem 4rem;
+    border-radius: 1.5rem;
+    border: none;
+    background-color: ${information.primaryColor};
+    color: var(--white);
+    font-weight: 600;
+    transition: all 0.5s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: ${information.secondaryColor};
+    }
+  `;
+
   return (
-    <button
-      className={`${styles.descContainer} ${withBorderNotFilled && styles.withBorderNotFilled}`}
-      //   onClick={() => signIn('github')}
-    >
+    <ButtonContainer href={route} type={type}>
       {description}
-    </button>
+    </ButtonContainer>
   );
-  //   : (
-  //     <div>Olá Diego</div>
-  //   );
 }

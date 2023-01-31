@@ -1,0 +1,37 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "sqlite"
+    url      = "file:./dev.db"
+}
+
+// model User {
+//     id              String        @id @default(cuid())
+//     firstName       String
+//     lastName        String
+//     email           String        @unique
+//     password        String
+//     information     Information[]
+//     activeSignature Boolean       @default(false)
+// }
+
+model Information {
+    id                   String @id @default(cuid())
+    mainImg1             String
+    mainDesc1            String
+    maingImg2            String
+    mainDesc2            String
+    aboutTittle          String
+    aboutDesc            String
+    aboutImg1            String
+    aboutNameImg1        String
+    aboutSocialMediaImg1 String
+    aboutImg2            String
+    aboutNameImg2        String
+    aboutSocialMediaImg2 String
+    aboutImg3            String
+    aboutNameImg3        String
+    aboutSocialMediaImg3 String
+}
