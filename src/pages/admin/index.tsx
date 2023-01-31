@@ -4,7 +4,6 @@ import { GrContact, GrDomain } from 'react-icons/gr';
 import { FcAbout } from 'react-icons/fc';
 import { GiTeacher } from 'react-icons/gi';
 import styles from './styles.module.scss';
-import { Button } from '../../components/Button';
 import { useState } from 'react';
 
 import styled from '@emotion/styled';
@@ -54,6 +53,24 @@ function a11yProps(index: number) {
 
 export default function BasicTabs() {
   const { information } = useInfo();
+
+  const CustomButton = styled.button`
+    padding: 0.5rem 4rem;
+    border-radius: 1.5rem;
+    border: none;
+    background-color: ${information.primaryColor};
+    color: var(--white);
+    font-weight: 600;
+    transition: all 0.5s;
+    cursor: pointer;
+    width: 20%;
+    margin-bottom: 2rem;
+
+    &:hover {
+      background-color: ${information.secondaryColor};
+    }
+  `;
+
   const data = {
     homeDesc1: information.homeDesc1,
     homeImg1: information.homeImg1,
@@ -74,6 +91,12 @@ export default function BasicTabs() {
     aboutImg3: information.aboutImg3,
     aboutProf3: information.aboutProf3,
     aboutMed3: information.aboutMed3,
+    coursesTitle1: information.coursesTitle1,
+    coursesSubtitle1: information.coursesSubtitle1,
+    coursesUrl1: information.coursesUrl1,
+    coursesTitle2: information.coursesTitle2,
+    coursesSubtitle2: information.coursesSubtitle2,
+    coursesUrl2: information.coursesUrl2,
   };
 
   const [value, setValue] = React.useState(0);
@@ -104,6 +127,12 @@ export default function BasicTabs() {
     information.aboutImg3 = info?.aboutImg3;
     information.aboutProf3 = info?.aboutProf3;
     information.aboutMed3 = info?.aboutMed3;
+    information.coursesTitle1 = info?.coursesTitle1;
+    information.coursesSubtitle1 = info?.coursesSubtitle1;
+    information.coursesUrl1 = info?.coursesUrl1;
+    information.coursesTitle2 = info?.coursesTitle2;
+    information.coursesSubtitle2 = info?.coursesSubtitle2;
+    information.coursesUrl2 = info?.coursesUrl2;
 
     console.log(information.homeImg1);
     console.log(information.homeDesc1);
@@ -231,8 +260,7 @@ export default function BasicTabs() {
             }}
           />
           <Box>
-            <button type='submit'>Save Changes</button>
-            {/* <Button description={'Save Changes'} type='submit' route={''} /> */}
+            <CustomButton type='submit'>Salvar Alterações</CustomButton>
           </Box>
         </Stack>
       </Dashboard>
@@ -391,13 +419,110 @@ export default function BasicTabs() {
           />
 
           <Box>
-            <button type='submit'>Save Changes</button>
+            <CustomButton type='submit'>Salvar Alterações</CustomButton>
           </Box>
         </Stack>
       </Dashboard>
 
       <Dashboard value={value} index={2}>
-        <input type='file' accept='video/mp4,video/x-m4v,video/*' />
+        <Stack
+          sx={{ gap: '2rem' }}
+          component='form'
+          className={styles.container}
+          onSubmit={(e) => {
+            e.preventDefault();
+            handleSubmit(info);
+          }}
+        >
+          <Tittle>Insira Seus Cursos</Tittle>
+          <SubTittle>Curso 1</SubTittle>
+          <TextField
+            key={information.coursesTitle1}
+            onChange={handleFieldChange}
+            value={info.coursesTitle1}
+            multiline
+            maxRows={5}
+            id='coursesTitle1'
+            type='text'
+            label='Insira um título para o curso'
+            sx={{
+              width: '30%',
+              color: 'red',
+            }}
+          />
+          <TextField
+            key={information.coursesSubtitle1}
+            onChange={handleFieldChange}
+            value={info.coursesSubtitle1}
+            multiline
+            maxRows={5}
+            id='coursesSubtitle1'
+            type='text'
+            label='Insira um subtítulo para o curso'
+            sx={{
+              width: '30%',
+              color: 'red',
+            }}
+          />
+          <TextField
+            key={information.coursesUrl1}
+            onChange={handleFieldChange}
+            value={info.coursesUrl1}
+            multiline
+            maxRows={5}
+            id='coursesUrl1'
+            type='text'
+            label='Insira a URL do curso'
+            sx={{
+              width: '30%',
+              color: 'red',
+            }}
+          />
+          <SubTittle>Curso 2</SubTittle>
+          <TextField
+            key={information.coursesTitle2}
+            onChange={handleFieldChange}
+            value={info.coursesTitle2}
+            multiline
+            maxRows={5}
+            id='coursesTitle2'
+            type='text'
+            label='Insira um título para o curso'
+            sx={{
+              width: '30%',
+              color: 'red',
+            }}
+          />
+          <TextField
+            key={information.coursesSubtitle2}
+            onChange={handleFieldChange}
+            value={info.coursesSubtitle2}
+            multiline
+            maxRows={5}
+            id='coursesSubtitle2'
+            type='text'
+            label='Insira um subtítulo para o curso'
+            sx={{
+              width: '30%',
+              color: 'red',
+            }}
+          />
+          <TextField
+            key={information.coursesUrl2}
+            onChange={handleFieldChange}
+            value={info.coursesUrl2}
+            multiline
+            maxRows={5}
+            id='coursesUrl2'
+            type='text'
+            label='Insira a URL do curso'
+            sx={{
+              width: '30%',
+              color: 'red',
+            }}
+          />
+          <CustomButton type='submit'>Salvar Alterações</CustomButton>
+        </Stack>
       </Dashboard>
 
       <Dashboard value={value} index={3}>

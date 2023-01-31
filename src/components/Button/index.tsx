@@ -1,10 +1,9 @@
 import styled from '@emotion/styled';
 import { useInfo } from '../../../hooks/useInformation';
-// import styles from './styles.module.scss';
 
 interface Props {
   description: string;
-  route: string;
+  route?: string;
   type: string;
 }
 

@@ -1,9 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next';
 import { Button } from '../Button';
 import { useInfo } from '../../../hooks/useInformation';
 
 import styled from '@emotion/styled';
-import styles from './styles.module.scss';
 
 export default function HomePage() {
   const { information } = useInfo();
@@ -29,6 +27,7 @@ export default function HomePage() {
       height: 45vh;
       width: 25vw;
       border-radius: 10%;
+      object-fit: cover;
     }
   `;
 
@@ -40,8 +39,14 @@ export default function HomePage() {
     justify-content: space-around;
     text-align: center;
     font-weight: 400;
-    // font-size: 1.5rem;
     letter-spacing: 0.15rem;
+  `;
+
+  const ButtonDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 2rem 0;
   `;
 
   console.log(information);
@@ -66,9 +71,9 @@ export default function HomePage() {
           <img src={information.homeImg2} alt='' />
         </ImageContainer>
       </SecondContainer>
-      <div className={styles.downsideButton}>
+      <ButtonDiv>
         <Button description={'Acesse Nossos Cursos'} route={'/courses'} type='button'></Button>
-      </div>
+      </ButtonDiv>
     </>
   );
 }

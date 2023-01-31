@@ -1,6 +1,7 @@
 import { useInfo } from 'hooks/useInformation';
 
 import styled from '@emotion/styled';
+import Head from 'next/head';
 
 export default function About() {
   const { information } = useInfo();
@@ -78,6 +79,9 @@ export default function About() {
 
   return (
     <div>
+      <Head>
+        <title>BelaClass | Sobre Nós</title>
+      </Head>
       <AboutContainer>
         <AboutTitle>{information.aboutTitle}</AboutTitle>
         <AboutDescription>{information.aboutDesc}</AboutDescription>
